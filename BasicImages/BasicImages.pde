@@ -7,5 +7,6 @@ void setup(){
 }
 
 void draw(){
-  image(cat,0,0);
+  background(0);
+  image(cat,mouseX-140, mouseY-140,cat.width,cat.height);
 }
