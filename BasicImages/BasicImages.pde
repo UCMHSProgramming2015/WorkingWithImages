@@ -30,14 +30,20 @@ void draw() {
     vel[i].limit(15);
     //draw ball
     if (i%2==0) {
-      image(black, loc[i].x, loc[i].y, 60, 60);
+      image(black, loc[i].x-30, loc[i].y-30, 60, 60);
+     
     } else {
-      image(red, loc[i].x, loc[i].y, 60, 60);
+      image(red, loc[i].x-30, loc[i].y-30, 60, 60);
     }
     //add velocitloc.yto position
     loc[i].x+= vel[i].x;
     loc[i].y+= vel[i].y;
-  
+  for(int j = 0; j<count; j++){
+    if (dist(loc[i].x,loc[i].y,loc[j].x,loc[j].y)<60&&!(i==j)){
+      vel[i].mult(-1);
+      vel[j].mult(-1);
+    }
+  }
     //wrap the ball's position
     if (loc[i].x>= width) {
       loc[i].x= 0;
