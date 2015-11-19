@@ -1,23 +1,30 @@
 
 //declare PImage
-PImage elephant;
-float scale = 0.001;
-
+PImage series;
+float scale = 5;
+float sz;
 
 
 void setup(){
-  size(800,600);
- elephant = loadImage("baby elephant.jpg");   //load picture into PImage
-
- 
+  size(488,469);
+ series = loadImage("series.jpg");   //load picture into PImage
  imageMode(CENTER);  //draw image from centre
+ background(0);
+ noStroke();
 }
 
 
 
 
 void draw(){
- scale = random (0.01, 8);
-  background(0);
- image(elephant,random(width),random(height),elephant.width*scale,elephant.height*scale);   //display image
+sz = map(mouseY,0,height,1,5);   //set sz based on mouseY
+//repeat so more circles are drawn per frame
+for(int i=0; i<30; i++){
+  //pick random integers for x and y
+int x = int(random(width));
+int y = int(random(height));
+//set fill to the colour of the "elephant" image at x,y
+fill(series.get(x,y));
+ellipse(x,y,sz,sz);
+}
 }
