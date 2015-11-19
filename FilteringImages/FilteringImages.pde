@@ -1,12 +1,13 @@
-PImage Turing;
+PImage Station;
 
 void setup(){
-  size(450,516);
-  Turing = loadImage("5181f9a54f7c1edc5275e1fd270d738a_large.gif");
-  Turing.resize(450,516);
+  size(960,540);
+  Station = loadImage("space_odyssey_3.jpg");
+  Station.resize(960,540);
 }
 
 void draw(){
   background(0);
-  image(Turing,0,0);
+  image(Station,0,0);
+  filter(THRESHOLD, .4);
 }
