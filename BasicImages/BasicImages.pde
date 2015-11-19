@@ -2,7 +2,7 @@
 PImage Turing;
 PImage Artorias;
 PImage Station;
-int pix = 2;
+int pix = 8;
 
 void setup(){
   size(960,540);
