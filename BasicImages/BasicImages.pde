@@ -8,6 +8,7 @@ void setup(){
   imageMode(CENTER);
   loc = new PVector (random(width),random(height));
   vel = PVector.random2D();
+  vel.mult(3);
 }
 
 void draw(){
@@ -24,4 +25,5 @@ void draw(){
   } else if (loc.y <= 0) {
     vel.y = abs(vel.y);
   }
+  filter(POSTERIZE,4);
 }
