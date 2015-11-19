@@ -1,10 +1,16 @@
-PImage friendlinessPellets;
-
+PImage bird;
+//PImage friendlinessPellets;
+float scale = .1;
 void setup(){
  size(800, 600);
- friendlinessPellets = loadImage("flowey.jpg");
+ bird = loadImage("bird.jpg"); 
+ //friendlinessPellets = loadImage("flowey.jpg");
 }
 
 void draw(){
-  image(friendlinessPellets, 0, 0);
+  background(0);
+  image(bird, mouseX, mouseY, bird.width * scale, bird.height * scale);
+  imageMode(CENTER);
+  
+  //image(friendlinessPellets, 0, 0);
 }
