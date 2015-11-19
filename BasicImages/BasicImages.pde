@@ -1,6 +1,6 @@
 //declare variables
 float diam;
-PImage red, black;
+PImage red, black, tree;
 int count = 4;
 float[] wanderers = new float[count];
 PVector[] vel = new PVector[count];
@@ -12,6 +12,8 @@ void setup() {
 
   //initialize variables
   red = loadImage("angry-bird-icon.png");
+  
+  tree = loadImage("tree_PNG3498.png");
   black = loadImage("angry-bird-black-icon.png");
   diam = 30;
   for (int i = 0; i< count; i++) {
@@ -23,6 +25,8 @@ void setup() {
 void draw() {
   //draw background to cover previous frame
   background(255);
+  image(tree, 0,120, 800,500);
+  filter(THRESHOLD,1);
   noStroke();
   for (int i = 0; i< count; i++) {
     acc[i] = PVector.random2D();
@@ -39,7 +43,7 @@ void draw() {
     loc[i].x+= vel[i].x;
     loc[i].y+= vel[i].y;
   for(int j = 0; j<count; j++){
-    if (dist(loc[i].x,loc[i].y,loc[j].x,loc[j].y)<60&&!(i==j)){
+    if (dist(loc[i].x,loc[i].y,loc[j].x,loc[j].y)<50&&!(i==j)){
       vel[i].mult(-1);
       vel[j].mult(-1);
     }
