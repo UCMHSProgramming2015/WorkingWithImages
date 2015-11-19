@@ -9,5 +9,6 @@ void setup(){
 
 
 void draw(){
-  image(okapi,200,100, 400,400);
+  background(0);
+  image(okapi,mouseX, mouseY, okapi.width/5,okapi.height/5);
 }
