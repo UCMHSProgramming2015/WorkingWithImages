@@ -1,13 +1,14 @@
-PImage disgusting;
+PImage trumpangry;
 float scaleFactor;
 
 void setup(){
-  size(800,600);
-  disgusting = loadImage("hynnnrrrgh.jpg");
+  trumpangry = loadImage("trumppic.jpg");
+  size(386, 217);
+  background(trumpangry);
 }
 
 void draw(){
-  scaleFactor = random(.1, 2);
-  background(0);
-  image(disgusting, random(width), random(height), disgusting.width*scaleFactor, disgusting.height*scaleFactor);
+  noStroke();
+  fill(trumpangry.get(mouseX, mouseY));
+  ellipse(mouseX, mouseY, 5, 5);
   }
