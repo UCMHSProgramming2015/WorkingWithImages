@@ -1,13 +1,13 @@
-PImage Station;
+PImage Artorias;
 
 void setup(){
-  size(960,540);
-  Station = loadImage("space_odyssey_3.jpg");
-  Station.resize(960,540);
+  size(640,747);
+  Artorias = loadImage("DSPC_Artorias_Final.jpg");
+  Artorias.resize(640,747);
 }
 
 void draw(){
   background(0);
-  image(Station,0,0);
-  filter(THRESHOLD, .4);
+  image(Artorias,0,0);
+  filter(POSTERIZE, 4);
 }
