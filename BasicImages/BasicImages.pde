@@ -9,6 +9,8 @@ void setup () {
 
 void draw() {
   image(kobe, mouseX, mouseY, kobe.width*scaleFactor, kobe.height*0.5);
+  tint(0,255,0);
+  image(kobe, mouseX, mouseY, kobe.width*0.5, kobe.height*0.5);
 }
 
 void keyPressed() {
