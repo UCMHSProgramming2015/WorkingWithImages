@@ -1,15 +1,15 @@
-PImage pic;
+PImage vac;
 float scalefactor = .2;
 PVector loc = new PVector (width/2,height/2), vel = PVector.random2D ();
 
 void setup () {
   size(800, 600);
-  pic=loadImage("vacation spot.jpg");
+  vac=loadImage("vacation spot.jpg");
 }
 
 void draw() {
   background(0);
-  image(pic, loc.x, loc.y,pic.width*scalefactor,pic.height*scalefactor);
+  image(vac, loc.x, loc.y,vac.width*scalefactor,vac.height*scalefactor);
   loc.add(vel);
   if (loc.x>width) {
     loc.x=0;
