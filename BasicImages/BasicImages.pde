@@ -13,7 +13,7 @@ void setup(){
 }
 
 void draw(){
-  background(0);
+  background(random(255),0,0);
  image(g,loc.x,loc.y);
  a = PVector.random2D();
  a.mult(.1);
