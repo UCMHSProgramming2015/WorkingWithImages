@@ -26,7 +26,7 @@ void setup(){
   hungry = loadImage("hungry.png");
   insecure = loadImage("insecure.jpg");
   jubilant = loadImage("jubilant.png");
-  squinty = loadImage("squinty.jpg");
+  squinty = loadImage("squinty.png");
 }
 
 void draw(){
@@ -42,11 +42,13 @@ void draw(){
    
   //display images
   image(disgusted,0,-20);
-  image(jubilant,10,400);
-  image(derpy,width/3,0);
-  image(done,300,250);
+  image(jubilant,35,415);
+  image(derpy,width/3,10);
+  image(done,300,220);
   image(frazzled,width/3,height/2);
   image(angry, 2*width/3, 0);
   image(fake, 20,height/3);
-  image(angry, 2*width/3, 300);
+  image(hungry, 2*width/3, 330);
+  
+  image(squinty, mouseX, mouseY);
 }
