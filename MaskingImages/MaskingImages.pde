@@ -1,3 +1,5 @@
+//initialize variables
+
 PImage undertale3;
 PImage maskPudding;
 PImage heart;
@@ -15,10 +17,10 @@ void setup(){
 
 void draw(){
   background(0);
-  image(maskPudding, random(width/2, width/2 + 5), random(height/2, height/2 + 5));
-  image(heart, mouseX, mouseY, sz, sz);
-  imageMode(CENTER);
+  image(maskPudding, random(width/2, width/2 + 5), random(height/2, height/2 + 5));  //pudding intensifies
+  image(heart, mouseX, mouseY, sz, sz);  //draws out the SOUL/heart of the code
+  imageMode(CENTER);  //image set to center 
   text("*It seems to liek pudding.", width/2-218, 435);
   
-  maskPudding.mask(undertale3);
+  maskPudding.mask(undertale3);  //masking pudding with undertale battle screen 
 }
