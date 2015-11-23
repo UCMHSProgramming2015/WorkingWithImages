@@ -7,5 +7,6 @@ void setup(){
     Willy.mask(Wonka);
 }
 void draw(){
+  background(random(255),random(255),random(255));
   image(Willy,0,0);
 }
