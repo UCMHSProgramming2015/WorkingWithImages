@@ -6,5 +6,5 @@ void setup() {
 }
 void draw() {
   image(gabe, 0, 0, gabe.width, gabe.height);
-  filter(INVERT);
+  filter(THRESHOLD);
 }
