@@ -11,4 +11,10 @@ void draw()
   //filter(GRAY);
   //filter(INVERT);
   filter(POSTERIZE, 10);
+  for(int i = 0; i < 3; i++)
+  {
+    //filter(DILATE);
+    //filter(ERODE);
+    filter(BLUR);
+  }
 }
