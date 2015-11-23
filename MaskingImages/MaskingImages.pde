@@ -5,6 +5,6 @@ void setup(){
   size(182,183); //canvas
   demon = loadImage("demon trump.jpg");
   point = loadImage("trump point.jpg");
-  demon.mask(point); //mask
+  demon.blend(point, 0, 0, 182, 183, 0, 0, 182, 183, ADD); //mask
   background(demon); //cover canvas with masked image
 }
