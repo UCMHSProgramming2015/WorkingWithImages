@@ -29,6 +29,8 @@ void draw() {
     vel.y = abs(vel.y);
   }
 filter(BLUR,3);
+filter(THRESHOLD,.3);
+filter(POSTERIZE,5);
 
 
 
