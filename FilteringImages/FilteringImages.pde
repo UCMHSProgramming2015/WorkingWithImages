@@ -1,11 +1,14 @@
 PImage cera;
 
 void setup(){
-  size(500,500);
+  frameRate(10);
+  size(917,510);
   cera = loadImage("bpmc.jpg");
+  background(cera);
 }
 
 void draw(){
-  image(cera,0,0,width,height);
-  filter(POSTERIZE,2);
+    background(cera);
+  image(cera,random(width),random(height),cera.width*(.16),cera.height*(.3));
+  filter(ERODE);
 }
