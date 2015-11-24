@@ -1,16 +1,16 @@
-//DECLARE piMAGE
+//declare PImage
 PImage series;
-PImage texture;
+PImage cage;
 
 void setup(){
 size(800,800);
 
 //Initialise PImage
 series = loadImage("series.jpg");
-texture = loadImage("texture.jpg");
+cage = loadImage("cage.jpg");
 
 //Blend texture into series
-series.blend(texture,0,0,series.width,series.height,0,0,texture.width,texture.height,ADD);  
+series.blend(cage,0,0,series.width,series.height,0,0,cage.width,cage.height,HARD_LIGHT);  
 }
 
 
