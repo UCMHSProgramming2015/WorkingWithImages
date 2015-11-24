@@ -13,10 +13,10 @@ void draw() {
   //repeat this 50 times per frame with a for loop
   for (int i = 0; i < 50; i++) {
     int x = int(random(width));
-    int y = int(random(height)):
-    fill(momo.get(x,y));
+    int y = int(random(height));
+    fill(get(x,y));
     ellipse(x,y, 2, 2);
-  background(0);  //make background black
+  background(255,255,255);  //make background black
   tint(200,0,0);
   image(FlashG, mouseX, mouseY,FlashG.width*2,FlashG.height*2);  //place image location according to where the mouse is. width and height factors
   }
@@ -24,5 +24,9 @@ void draw() {
 
 void keyPressed() {
  if(keyCode == UP) {
-   sceleFactor +-
+   scaleFactor += .1;
+ }
+ if(keyCode == DOWN) {
+   scaleFactor += .1;
+}
 }
