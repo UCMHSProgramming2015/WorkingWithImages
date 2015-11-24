@@ -11,6 +11,7 @@ void setup() {
   frameRate(100);
   imageMode(CENTER);
   Artorias = loadImage("painting_study_06_07_2013_by_remainaery-d6c5srv (1).jpg");
+  
   for (int i = 0; i < spawn; i++) {
     sif[i] = new PVector(width/2, height/2);
     velka[i] = new PVector(random(-5, 5), random(-5, 5));
@@ -38,7 +39,12 @@ void draw() {
     }
   }
   if (gameStart) {
-    //second style here
+    /***
+    int x = random(width));
+    int y = random(height));
+    fill(Artorias.get(x,y);
+    ellipse(x,y,5,5);
+    ***/
   }
 }
 
