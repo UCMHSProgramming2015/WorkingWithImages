@@ -5,6 +5,8 @@ PImage mariobackground;
 PVector yoshiLoc;
 PVector kirbyLoc;
 
+PVector vel;
+
 
 void setup(){
   size(800, 449);
@@ -14,12 +16,16 @@ void setup(){
   
   yoshiLoc = new PVector(100, 315);  //x = 100, y = 315
   kirbyLoc = new PVector(400, 340);
+  
+  vel = new PVector(5, 5);
 }
 
 void draw(){
   background(mariobackground);
   image(yoshi, yoshiLoc.x, yoshiLoc.y, yoshi.width*.25, yoshi.height*.25);
   image(kirby, kirbyLoc.x, kirbyLoc.y, kirby.width*.5, kirby.height*.5);
+  
+  kirbyLoc.add(vel);
   
   if (keyPressed){
     if (key == 'd'){
