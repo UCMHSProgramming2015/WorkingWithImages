@@ -4,7 +4,7 @@ PImage background;
 
 void setup(){
   //set canvas size
-  size(800,800);
+  size(800,600);
   
   //load images
   derpy = loadImage("Derpy.png");
@@ -14,6 +14,6 @@ void setup(){
 void draw(){
   //display images
   image(background, 0,0, width, height);
-  image(derpy, 250, 150);
+  image(derpy,0, 0);
 }
   
