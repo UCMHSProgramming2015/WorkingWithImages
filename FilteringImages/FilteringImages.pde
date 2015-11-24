@@ -1,15 +1,15 @@
-PImage StephCurry;
+PImage kobe;
 float scaleFactor=0.5;
 
 
 
 void setup () {
   size(800, 600);
-  StephCurry=loadImage("Steph Curry.jpg");
+  kobe=loadImage("Kobe.jpg");
 }
 
 void draw() {
-  
-  image(StephCurry, mouseX, mouseY, StephCurry.width*scaleFactor, StephCurry.height*0.5);
+  background(0);
+  image(kobe, mouseX, mouseY, kobe.width*scaleFactor, kobe.height*0.5);
   filter(INVERT);
 }
