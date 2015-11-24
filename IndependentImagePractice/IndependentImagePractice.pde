@@ -1,7 +1,8 @@
 //declare Pmagnets and variables
 int counter = 156500;
 PImage magnet;
-PImage mask;
+PImage meteor;
+PImage shower;
 int bottomBound, topBound;
 //counter is width * height
 int array [] = new int[counter];
@@ -10,6 +11,8 @@ void setup() {
   size(800,600);
   //load magnets
   magnet = loadImage("magnet.jpg");
+  meteor = loadImage("meteor.jpg");
+  shower = loadImage("shower.jpg");
 }
 
 void draw() {
@@ -26,4 +29,10 @@ void draw() {
   //show the magnet
   image(magnet, 0,0);
   filter(POSTERIZE,3); //filter for cool effect
+  
+  //blend another image
+  shower.blend(meteor, 0,0,meteor.width, meteor.height, 0,0,shower.width,shower.height, ADD);
+  //display the image
+  image(shower, mouseX,mouseY);
+  //affected by posterize filter
 }
