@@ -1,5 +1,5 @@
 PImage tacos; 
-float scaleFactor = .252;
+float scaleFactor = .23;
 
 void setup() {
   size(800, 600);
