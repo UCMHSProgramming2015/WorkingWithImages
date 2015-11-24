@@ -1,24 +1,15 @@
+float scalefactor = .1;
+PImage Goku;
 
 
-
-
-
-
-void setup() {
-  size(600,600);
+void setup () {
+  size(800, 600);
+  Goku = loadImage("Goku.JPG");
   
-  
-  
+
 }
 
-
-
 void draw () {
-
-fill(random(255),random(255),random(255));
-  stroke(random(255),random(255),random(255));
-  ellipse(random(width), random(height), random (5,100), random(-5,100));
-
-
-
+  image(Goku, mouseX, mouseY, Goku.width*scalefactor, Goku.height*scalefactor);
+  filter(INVERT);
 }
