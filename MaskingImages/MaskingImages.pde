@@ -4,12 +4,14 @@ int imageCount = 10;
 int frame = 0;
 
 void setup () {
-  size(960, 754);
+  size(500, 400);
   hole = loadImage("Hole.jpg");
+  hole.resize(500,400);
   fire = new PImage[imageCount];
   for (int i = 0; i < imageCount; i++) {
     String filename = "tmp-" + i + ".gif";
     fire[i] = loadImage(filename);
+    fire[i].resize(500,400);
     fire[i].mask(hole);
   }
 }
