@@ -1,5 +1,5 @@
 //PImage declared
-PImage bin, cha, yun;
+PImage bin, cha, yun, mask, duck;
 
 //Fun variable declared!
 int diam = 25;
@@ -15,7 +15,7 @@ void setup () {
   size (800, 600);
   noStroke();
 
-  //fun variables loaded
+  //Fun variables loaded
   for (int i = 0; i < count; i++) {
     loc[i] = new PVector (width/2, height/2);
     vel[i] = new PVector (0, 0);
@@ -28,15 +28,26 @@ void setup () {
   bin = loadImage("binoculars.png");
   yun = loadImage("el yunque cave.jpg");
   cha = loadImage("chang kong path.jpg");
+  mask = loadImage("mask.jpg");
+  duck = loadImage("duck.PNG");
+
+  //Gradient
+  cha.mask(mask);
 }
 
 void draw () {
-
-
   //Images drawn
+
+  imageMode(CORNER);
+  image(mask, 325, 0);
   image(yun, 0, 0);
-  image(cha, 400, 0);
+  image(cha, 325, 0);
   image(bin, 0, 0);
+  imageMode(CENTER);
+
+  if (mousePressed) {
+    image(duck, mouseX, mouseY);
+  }
 
   for (int i = 0; i < count; i++) {
     //draw ball
@@ -48,8 +59,6 @@ void draw () {
     acc[i] = PVector.random2D();
     acc[i].mult(.5);
     vel[i].limit(3);
-
-    //draw background to cover previous frame
 
     //add velocity to position
     loc[i].add(vel[i]);
