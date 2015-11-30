@@ -30,8 +30,8 @@ red.blend(rose,0,0,red.width,red.height,0,0,rose.width,rose.height,ADD);
 
 
 void draw(){
-  size = map(mouseX,0,width,0.2,20); 
-if(mouseX>width/2){ 
+  size = map(mouseX,0,width,0.2,15); 
+if(mouseY<height/2){ 
 for(int i = 0; i < 50; i++){
  int x = int(random(width));
  int y = int(random(height));
@@ -40,14 +40,14 @@ for(int i = 0; i < 50; i++){
  ellipse(x,y,size,size);
  }
 }
-else{
+if( mouseY>height/2){
  for(int i = 0; i<50; i++){
   int x = int(random(width));
   int y = int(random(height));
   fill(rose.get(x,y));
   ellipse(x,y,size,size);
- }
+ }}
+ 
 }
 
   
-}
