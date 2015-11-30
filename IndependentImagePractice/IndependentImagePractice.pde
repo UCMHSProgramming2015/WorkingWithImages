@@ -34,21 +34,19 @@ void setup(){
 
 void draw(){
   background(mariobackground);
-  
-  //image(yoshi, yoshiLoc.x, yoshiLoc.y, yoshi.width*.25, yoshi.height*.25);
-  
+      
   filter(GRAY);
   
-  image(yoshi, mouseX, 315, yoshi.width*.25, yoshi.height*.25);
+  image(yoshi, yoshiLoc.x, 315, yoshi.width*.25, yoshi.height*.25);
   
   image(kirby, kirbyLoc.x, kirbyLoc.y, kirby.width*.5, kirby.height*.5);
 
-  image(cloud, mouseX, 100);
+  image(cloud, yoshiLoc.x-100, 25);
+
   
   kirbyLoc.add(vel);
   
-  /*
-  
+    
   if (keyPressed){
     if (key == 'd'){
       yoshiLoc.add(3, 0);
@@ -58,7 +56,6 @@ void draw(){
     }
   }
   
-  */
   
   if(kirbyLoc.x >= width || kirbyLoc.x <= 0){
     vel.x *= -1;
@@ -68,4 +65,16 @@ void draw(){
     vel.y *= -1;
   }
   
+  if(kirbyLoc.x >= yoshiLoc.x && kirbyLoc.x <= yoshiLoc.x){
+    vel.x *= -1;
+  }
+  
+  if(yoshiLoc.x <= 0){
+    yoshiLoc.mult(0);
+  }
+  
+  if(yoshiLoc.x >= width-60){
+    yoshiLoc.mult(0);
+    print("    what are you DOING");
+  }
 }
