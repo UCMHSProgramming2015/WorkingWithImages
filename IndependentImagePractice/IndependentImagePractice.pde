@@ -5,11 +5,11 @@ void setup(){
   size(800,450);
   g = loadImage("g.jpg");
   s = loadImage("s.jpg");
-  //g.mask(s);
+  g.mask(s);
 }
 
 void draw(){
   background(0);
   image(g,0,0,width,height);
-  filter(POSTERIZE,4);
+  filter(POSTERIZE,5);
 }
