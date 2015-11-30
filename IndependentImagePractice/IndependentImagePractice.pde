@@ -81,7 +81,6 @@ void draw(){
   }
   
   if(yoshiLoc.x >= width-60){
-    yoshiLoc.mult(0);
-    print("    what are you DOING");
+    yoshiLoc.add(-3, 0);
   }
 }
