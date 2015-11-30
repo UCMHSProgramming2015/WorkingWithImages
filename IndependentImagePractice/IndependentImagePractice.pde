@@ -11,4 +11,5 @@ void setup(){
 void draw(){
   background(0);
   image(g,0,0,width,height);
+  filter(POSTERIZE,4);
 }
