@@ -4,6 +4,7 @@ PImage mariobackground;
 PImage haro;  //to be blended with kirby
 PImage cloud;
 PImage galaxy;
+PImage yoshiFlip;
 
 PVector yoshiLoc;
 
@@ -21,6 +22,7 @@ void setup(){
   haro = loadImage("haro.png");
   cloud = loadImage("cloud2.jpg");
   galaxy = loadImage("galaxy.jpg");
+  yoshiFlip = loadImage("yoshiFlip.png");
   
   yoshiLoc = new PVector(100, 315);  //x = 100, y = 315
   kirby.blend(haro, 0, 0, kirby.width, kirby.height, 0, 0, haro.width, haro.height, SCREEN);
@@ -52,6 +54,11 @@ void draw(){
       yoshiLoc.add(3, 0);
     }
     if (key == 'a'){
+      background(mariobackground);
+      filter(GRAY);
+      image(kirby, kirbyLoc.x, kirbyLoc.y, kirby.width*.5, kirby.height*.5);
+      image(yoshiFlip, yoshiLoc.x, 315, yoshiFlip.width*.25, yoshiFlip.height*.25 );
+      image(cloud, yoshiLoc.x-100, 25);
       yoshiLoc.add(-3, 0);
     }
   }
