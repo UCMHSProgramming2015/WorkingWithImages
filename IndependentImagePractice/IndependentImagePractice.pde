@@ -5,6 +5,8 @@ PImage cage;
 
 void setup(){
 size(800,800);
+background(0);
+noStroke();
 
 //Initialise PImage
 skull = loadImage("skull.jpg");
@@ -16,8 +18,13 @@ skull.blend(cage,0,0,skull.width,skull.height,0,0,cage.width,cage.height,MULTIPL
 
 
 void draw(){
-  //draw the blended image
-  image(skull,0,0);
+for(int i = 0; i < 50; i++){
+ int x = int(random(width));
+ int y = int(random(height));
+ fill(skull.get(x,y));
+ ellipse(x,y,5,5);
+ 
+}
   
   
 }
