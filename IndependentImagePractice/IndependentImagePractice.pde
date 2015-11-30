@@ -1,18 +1,17 @@
-
-
+//THRESHOLD
 //declare PImage
 PImage skull;
-PImage tree;
+PImage cage;
 
 void setup(){
 size(800,800);
 
 //Initialise PImage
 skull = loadImage("skull.jpg");
-tree = loadImage("tree.jpg");
+cage = loadImage("cage.jpg");
 
-//Blend texture into skull
-skull.blend(tree,0,0,skull.width,skull.height,0,0,tree.width,tree.height,HARD_LIGHT);  
+//Blend texture into series
+skull.blend(cage,0,0,skull.width,skull.height,0,0,cage.width,cage.height,MULTIPLY);  
 }
 
 
