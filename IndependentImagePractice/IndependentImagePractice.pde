@@ -12,4 +12,4 @@ void draw(){
   image(dolphin,x,y);
   x+=10;
   y-=1;
-}
+} 
