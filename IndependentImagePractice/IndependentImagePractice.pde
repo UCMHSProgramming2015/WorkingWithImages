@@ -19,6 +19,7 @@ void setup() {
   cat.blend(rainbow, 0, 0, 800, 400, 0, 0, 400, 400, EXCLUSION ); 
   cat.blend(rainbow, 0,0,800,400,400,0,400,400, SOFT_LIGHT);
   catcolored = loadImage("cat1.jpg");
+  
   //mask overlay
   catcolored.mask(heart);
   diam = 20;
@@ -30,7 +31,9 @@ void setup() {
 }
 void draw() {
   //draw background
+  
   image(cat, 0,0);
+  filter(BLUR);
   //draw movable overlay
   image(catcolored, mouseX-width/2,mouseY-height/2);
   noStroke();
