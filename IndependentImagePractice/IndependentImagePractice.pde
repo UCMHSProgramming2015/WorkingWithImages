@@ -1,7 +1,8 @@
 PImage beach; 
 PImage beachball; 
 PImage sunset;  //declare variables  
-PVector loc = new PVector (0, height/4*3); PVector vel = new PVector (5,10);
+PVector loc = new PVector (0, height/4*3); 
+PVector vel = new PVector (10, 20);
 
 void setup() {
   size(800, 600);  //size of canvas
@@ -11,14 +12,15 @@ void setup() {
 }
 
 void draw() {
-  background(0);
-  image(beach, 0, 0, 800, 600);    //add beach picture and set it as the background
+  image(sunset, 0, 0, 800, 600);
+  image(beach, 0, 0, 800, 600);    //add beach picture 
+  beach.blend(sunset, 0, 0, sunset.width, sunset.height, 0, 0, beach.width, beach.height, SOFT_LIGHT);
   image(beachball, loc.x, loc.y, 100, 100);
   loc.add(vel);
   if (loc.x>width) {
     vel.x=-abs(vel.x);
   } else if (loc.x<0) {
-   vel.x=abs(vel.x);
+    vel.x=abs(vel.x);
   }
   if (loc.y>height) {
     vel.y=-abs(vel.y);
