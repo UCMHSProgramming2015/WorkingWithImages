@@ -50,12 +50,12 @@ void draw() {
     g = 0;
   }
   if (left) {
-    x2=x2-3;
+    x2=x2-10;
   }
   if (right) {
-    x2= x2 +3;
+    x2= x2 +10;
   }
-  
+
   image(kirby, x, y, diam, diam); //insert kirby
 
 
@@ -69,22 +69,19 @@ void draw() {
   if (x + diam >= width) {
     velX = -abs(velX)*1.05; //if the kirby hits the right wall, bounce and slow down
     velY = abs(velY);
-    blurry= blurry-1;
   } else if (x + diam/15 <= 0) {
     velX = abs(velX)*1.15;     //if the kirby hits the left wall, bounce and slow down
     velY = abs(velY)*1.15;
-    blurry= blurry-1;
   }
   if (y + diam >= height-25) { //bounce at bottom 
     velY = -abs(velY)*.65; // reduce velY
   } else if (y + diam <= 0) { //bounce at top
     velY = abs(velY);
-    blurry= blurry-1;
   }
   if (y + diam >= height && velY > 0) { //slowing velY at botom 
     velY = 0;
     g = 0;
-    blurry= blurry-1;
+    
   }
   if (y + diam/2 >= height && velY > 0 && velX > 0) { //slowing velX at bottom
     velY = 0;
