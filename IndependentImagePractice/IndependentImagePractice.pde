@@ -2,36 +2,49 @@
 PImage m, d;
 //initialize vectors
 PVector loc, vel, acc;
+//initialize x
+int x=0;
 void setup() {
   //canvas size
   size(600, 600);
   //load images
   m=loadImage("monet lillies.jpg");
   d=loadImage("d1.png");
-  //assign vectors 
+  //declare vectors 
   loc= new PVector(width/2, height/2);
   vel = new PVector(random(-1, 1), random(-1, 1));
-  //acc= PVector.random2D();
 }
 
 void draw() {
- //vel.add(acc);
   //draw image
   image(m, 0, 0);
   image(d, loc.x, loc.y);
-  //make dragonfly image move
+
+  //declare acc vector
+  acc= PVector.random2D();
+  acc.mult(.1);
+  
+  //make dragonfly move randomly
   loc.add(vel);
-  //acc.mult(.1);
- 
+  vel.add(acc);
+  vel.limit(1);
+
   //wrap dragonfly's position
   if (loc.x >= width) {
     loc.x = 0;
+    //increase blur (of dragonfly and waterlilles)if dragonfly goes off screen and comes back
+    x=x+1; 
   } else if (loc.x + 150 <= 0) {
     loc.x = width;
+    x=x+1;
   }
   if (loc.y >= height) {
     loc.y = 0;
+    x=x+1;
   } else if (loc.y + 150 <= 0) {
     loc.y = height;
+    x=x+1;
   }
+  //blur images
+  filter(BLUR, x);
 }
