@@ -8,6 +8,7 @@ void setup() {
   catcolored.mask(heart);
 }
 void draw() {
+  background(0);
   
   image(catcolored, 0,0);
 }
