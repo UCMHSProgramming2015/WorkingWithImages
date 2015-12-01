@@ -200,21 +200,3 @@ void keyTyped(){
     filter(DILATE);
   }
 }
-
-//create sharpie marker controlled with mouse for use on images
-void mousePressed(){
-    //left mouse button draws in black
-    if(mouseButton == LEFT){
-      stroke(0);
-      fill(0);
-    }
-    
-    //right mouse button draws in white
-    else if(mouseButton == RIGHT){
-      stroke(255);
-      fill(255);
-    }
-    
-    //draw the ellipses centered on the mouse
-    ellipse(mouseX, mouseY, 20, 20);
-}
