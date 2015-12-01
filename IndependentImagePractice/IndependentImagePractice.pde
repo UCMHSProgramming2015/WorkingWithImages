@@ -17,23 +17,23 @@ void setup(){
 
 void draw(){
   if (state == 1){
-    
+    image(Tesla, 0, 0);
   }
   
   if (state == 2){
-    
+    image(JohnCena, 0, 0);
   }
   
   if (state == 3){
-    
+    image(GrumpyCat, 0, 0);
   }
   
   if(state == 4){
-    
+    image(TomCruise, 0, 0);
   }
   
   if (state == 5){
-    
+    image(TheEnd, 0, 0);
   }
 }
 
