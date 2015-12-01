@@ -16,6 +16,7 @@ int gra = 1;
 int thr = 1;
 int inv = 1;
 int ero = 1;
+int dil = 1;
 
 void setup(){
   
@@ -52,8 +53,9 @@ void draw(){
     text("GRAY: G",width/2,170);
     text("INVERT: I",width/2,200);
     text("ERODE: E",width/2,230);
-    text("LMOUSE: BLACK SHARPIE",width/2,260);
-    text("RMOUSE: WHITE SHARPIE",width/2,290);
+    text("DILATE : D", width/2, 260);
+    text("LMOUSE: BLACK SHARPIE",width/2,290);
+    text("RMOUSE: WHITE SHARPIE",width/2,320);
     
     textSize(25);
     text("PLEASE CLICK TO BEGIN", width/2,  380);
@@ -169,6 +171,17 @@ void keyTyped(){
         noLoop();
       }
     }
+    
+    //d key activates the Dilate filter
+    if(key == 'd' || key == 'D'){
+      if(dil == 2){
+        dil = 1;
+        noLoop();
+      }else{
+        dil = 2;
+        noLoop();
+      }
+   }
       
   //apply filters when keys are clicked    
   if(thr == 2){
@@ -183,11 +196,13 @@ void keyTyped(){
   if(ero == 2){
     filter(ERODE);
   }
+  if(dil == 2){
+    filter(DILATE);
+  }
 }
 
 //create sharpie marker controlled with mouse for use on images
 void mousePressed(){
-  if(menu >= 3){
     //left mouse button draws in black
     if(mouseButton == LEFT){
       stroke(0);
@@ -202,5 +217,4 @@ void mousePressed(){
     
     //draw the ellipses centered on the mouse
     ellipse(mouseX, mouseY, 20, 20);
-  } 
 }
