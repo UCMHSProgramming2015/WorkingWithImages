@@ -3,6 +3,7 @@ PImage JohnCena;
 PImage GrumpyCat;
 PImage TomCruise;
 PImage TheEnd;
+PImage TelevisionSnowflakes;
 int state = 1;
 
 void setup(){
@@ -13,6 +14,7 @@ void setup(){
   GrumpyCat = loadImage("GrumpyCat.jpg");
   TomCruise = loadImage("TomCruise.png");
   TheEnd = loadImage("TheEnd.jpg");
+  TelevisionSnowflakes = loadImage("TelevisionSnowflakes.jpg");
 }
 
 void draw(){
@@ -60,8 +62,12 @@ void draw(){
   }
   
   if (state == 5){
+    background(0);
+    //image(TelevisionSnowflakes, 0, 0);
+    TheEnd.mask(TelevisionSnowflakes);
+    //filter(POSTERIZE, 4);
     image(TheEnd, 0, 0);
-    filter(POSTERIZE, 4);
+    noLoop();
   }
 }
 
