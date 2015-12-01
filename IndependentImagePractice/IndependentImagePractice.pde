@@ -3,6 +3,7 @@ PImage JohnCena;
 PImage GrumpyCat;
 PImage TomCruise;
 PImage TheEnd;
+int state = 1;
 
 void setup(){
   size(800, 800);
@@ -15,5 +16,27 @@ void setup(){
 }
 
 void draw(){
+  if (state == 1){
+    
+  }
   
+  if (state == 2){
+    
+  }
+  
+  if (state == 3){
+    
+  }
+  
+  if(state == 4){
+    
+  }
+  
+  if (state == 5){
+    
+  }
+}
+
+void mousePressed(){
+  state += 1;
 }
