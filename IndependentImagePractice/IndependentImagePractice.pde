@@ -7,8 +7,8 @@ void setup() {
   ocean=loadImage("ocean.jpg");
   x=0;
   y=2*height/3;
-  vx=1;
-  vy=5;
+  vx=5;
+  vy=10;
 }
 
 void draw() {
@@ -17,7 +17,7 @@ void draw() {
   image(dolphin, x, y);
   x+=vx;
   y-=vy;
-  if (y<=height/6) {
-    vy*=-2;
+  if (y<=height/8) {
+    vy*=-1;
   }
-} 
+}
