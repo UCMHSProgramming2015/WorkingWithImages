@@ -10,6 +10,7 @@ void setup () {
 }
 
 void draw () {
+  background(255);
   image(Goku, mouseX, mouseY, Goku.width*scalefactor, Goku.height*scalefactor);
   
 }
