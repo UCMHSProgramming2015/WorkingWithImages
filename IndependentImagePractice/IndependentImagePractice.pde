@@ -9,7 +9,6 @@ void setup() {
   hotline = loadImage("hotline.jpg");
   hotline.mask(fire2);
   drake = loadImage("drake.jpg");
-  
 }
 
 void draw() {
@@ -19,16 +18,14 @@ void draw() {
   image(hotline, 0, 0);
   image(drake, loc.x, loc.y);
   loc.add(vel);
-  if(loc.x>width) {
+  if (loc.x>width) {
     loc.x=0;
-  }
-  else if (loc.x<0){
+  } else if (loc.x<0) {
     loc.x =width;
   }
-  if(loc.y>height) {
+  if (loc.y>height) {
     loc.y = 0;
-  }
-  else if (loc.y <0) {
+  } else if (loc.y <0) {
     loc.y = height;
   }
 }
