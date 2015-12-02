@@ -13,6 +13,8 @@ void draw() {
   background(map(mouseY, 0, height, 0, 250));  //set background
    image(Stormrage, 0, 0);  //Insert Stormrage Image
   image(Fire, 0, 0);  //Insert Fire Image
- 
-  tint(0,255,255);  //add bluish tint
+}
+
+void keyPressed() {
+  tint(random(255),random(255),random(255));  //when key pressed, picture changes tint color randomly
 }
