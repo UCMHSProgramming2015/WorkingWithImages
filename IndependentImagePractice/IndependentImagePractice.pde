@@ -1,15 +1,23 @@
-PImage dolphin;
-int x=0, y=height;
+PImage dolphin, ocean;
+int x, y,vx,vy;
 
-void setup(){
-  size(1000,800);
+void setup() {
+  size(1200, 800);
   dolphin=loadImage("dolphin.png");
-  frameRate(10);
+  ocean=loadImage("ocean.jpg");
+  x=0;
+  y=2*height/3;
+  vx=1;
+  vy=5;
 }
 
-void draw(){
-  background(0,0,255);
-  image(dolphin,x,y);
-  x+=10;
-  y-=1;
+void draw() {
+  image(ocean, 0, 0, width, height);
+  //line(0,height/3,width,height/3);
+  image(dolphin, x, y);
+  x+=vx;
+  y-=vy;
+  if (y<=height/6) {
+    vy*=-2;
+  }
 } 
