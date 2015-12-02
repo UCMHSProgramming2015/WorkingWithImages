@@ -1,28 +1,32 @@
 
 boolean left, right, jumping;
-PImage mariofinal, floor,background;
+PImage mariofinal, floor, background;
 float speed, x, y, jumpSpeed;
 float origJumpSpeed ;
 float gravity = 1;
 void setup() {
   size(800, 600);
-  mariofinal=loadImage("mariofinal.jpg");
+  mariofinal=loadImage("Mario-Run.png");
   floor=loadImage("floor.jpg");
   background= loadImage("mario background.jpg");
-  x=50;
+  
+  x=-100;
   speed=5;
-  y=450;
+  y=350;
   jumpSpeed=-15;
   origJumpSpeed=jumpSpeed;
 }
 
 void draw() {
-  background(167, 157, 254);
-  image(background,0,0,800,550);
-  image(mariofinal, x, y);
-  image(floor, 0, 550, 800, 50);
+  images();
   movemario();
   restrictmario();
+}
+
+void images() {
+  image(background, 0, 0, 800, 550);
+  image(mariofinal, x, y);
+  image(floor, 0, 550, 800, 50);
 }
 
 void movemario() {
@@ -32,16 +36,16 @@ void movemario() {
   if (right) {
     x = x + speed;  // uses boolean true or false statement to move right if the right key is pressed
   } 
-    if (jumping == true) {
+  if (jumping == true) {
     jumpSpeed += gravity;
     y += jumpSpeed;
-    if (y > 450) {
-      y = 450;
+    if (y > 350) {
+      y = 350;
       jumping = false;
       jumpSpeed = origJumpSpeed;
     }
   }
-  }
+}
 
 
 void keyPressed() {
@@ -64,12 +68,11 @@ void keyReleased() {
   if (keyCode == RIGHT) {
     right = false;
   }
- 
 }
 
 
 void restrictmario() {
-  if (x - speed < 0) {
+  if (x - speed < -100) {
     x = x + speed;
   }
 }
