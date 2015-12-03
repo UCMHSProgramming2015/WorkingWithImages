@@ -5,6 +5,7 @@ PImage em3;
 PImage em4;
 PImage em5;
 float EM;
+float FI;
 
 void setup () {
   size(800,600);
@@ -17,12 +18,12 @@ void setup () {
   em4 = loadImage("em4.jpg");
   image(space,width/2,height/2);
   space.resize(800,600);
-  EM = random(5);
   frameRate(500);
 }
 
 void draw () {
   EM = random(5);
+  FI = random(5);
   em1.resize(25,25);
   em2.resize(25,25);
   //em3.resize(50,50);
@@ -48,5 +49,20 @@ void draw () {
     //image(em3,mouseX,mouseY);
     //image(em4,mouseX,mouseY);
     //image(em5,mouseX,mouseY);
+  }
+  if (FI == 1); {
+    filter(THRESHOLD);
+  }
+  if (FI == 2); {
+    filter(INVERT);
+  }
+  if (FI == 3); {
+    filter(POSTERIZE,4);
+  }
+  if (FI == 4); {
+    filter(GRAY);
+  }
+  if (FI == 5); {
+    filter(BLUR,4);
   }
 }
