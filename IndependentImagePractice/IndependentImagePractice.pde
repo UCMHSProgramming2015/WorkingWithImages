@@ -2,11 +2,12 @@ PImage pugmask, trump;
 
 void setup(){
   pugmask = loadImage("pugmask.png");
-  trump = loadImage("praiselawdjesus.jpg");
-  size(634, 414);
+  trump = loadImage("hynnnrrrgh.jpg");
+  size(290, 174);
 }
 
 void draw(){
   background(trump);
-  image(pugmask, 100, 80);
+  image(pugmask, 15, -80);
+  filter(INVERT);
 }
