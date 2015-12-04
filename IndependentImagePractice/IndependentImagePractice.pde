@@ -1,5 +1,5 @@
 PImage dolphin, ocean;
-int x, y,vx,vy;
+int x, y, vx, vy;
 
 void setup() {
   size(1200, 800);
@@ -17,7 +17,10 @@ void draw() {
   image(dolphin, x, y);
   x+=vx;
   y-=vy;
-  if (y<=height/8) {
+  if (y<=height/8 || y>=height-100) {
     vy*=-1;
+  }
+  if (x>width) {
+    x=0;
   }
 }
