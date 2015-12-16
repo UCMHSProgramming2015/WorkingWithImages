@@ -12,7 +12,7 @@ void setup() {
 
 
 void draw() {
- println
+
   //line(200, 0, 200, height);
   //line(400, 0, 400, height);
   //line(0, 180, width, 180);
